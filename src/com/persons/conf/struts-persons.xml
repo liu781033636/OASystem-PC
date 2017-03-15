@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name= "struts.multipart.maxSize" value="5242880" />
+    <package name="persons.employee" namespace="/persons/employee"
+    extends="struts-default">
+	
+	   <global-results>
+			<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		
+		
+		<action name="employee_*" method="{1}"
+			class="com.persons.action.EmployeeAction">
+			<result name="list">/WEB-INF/persons/employee/employee_info.jsp</result>
+			<result name="show">/WEB-INF/persons/employee/employee_showinfo.jsp</result>
+			<result name="add_input">/WEB-INF/persons/employee/employee_addinfo.jsp</result>
+			<result name="edit_input">/WEB-INF/persons/employee/employee_editinfo.jsp</result>
+	        <result name="return_list" type="redirect">employee_list</result>
+	        <result name="searchSelect">/WEB-INF/persons/employee/select_employee.jsp</result>
+
+		</action>
+		</package>
+		
+		<!-- 考勤 -->
+		<package name="persons.attendacce" namespace="/persons/attendance"
+       extends="struts-default">
+       	    <global-results>
+	  		<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		
+		<action name="attendance_*" method="{1}"
+			class="com.persons.action.AttendanceAction">
+		<result name="sign">/WEB-INF/persons/attendance/sign.jsp</result>
+		<result name="signIn">/WEB-INF/persons/attendance/sign.jsp</result>
+		<!-- <result name="signIn" type="redirect">attendance_sign</result> -->
+		<result name="false">/WEB-INF/persons/attendance/sign_false.jsp</result>
+		<result name="list">/WEB-INF/persons/attendance/attendance.jsp</result>
+			
+		</action>
+		</package>
+				
+		<package name="persons.department" namespace="/persons/department"
+       extends="struts-default">
+	    <global-results>
+	  		<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		
+		
+		<action name="department_*" method="{1}"
+			class="com.persons.action.DepartmentAction">
+			<result name="list">/WEB-INF/persons/department/department_info.jsp</result>
+	
+			<result name="add_input">/WEB-INF/persons/department/department_addinfo.jsp</result>
+			<result name="edit_input">/WEB-INF/persons/department/department_editinfo.jsp</result>
+	        <result name="return_list" type="redirect">employee_list</result>
+	        <result name="department_del_false">/WEB-INF/persons/department/department_del_false.jsp</result>
+		</action>
+		</package>
+		
+		
+		
+		<package name="persons.jobs" namespace="/persons/jobs"
+       extends="struts-default">
+	    <global-results>
+	  		<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		
+		
+		<action name="jobs_*" method="{1}"
+			class="com.persons.action.JobsAction">
+			<result name="list">/WEB-INF/persons/jobs/jobs_info.jsp</result>
+		
+			<result name="add_input">/WEB-INF/persons/jobs/jobs_addinfo.jsp</result>
+			<result name="edit_input">/WEB-INF/persons/jobs/jobs_editinfo.jsp</result>
+	        <result name="return_list" type="redirect">employee_list</result>
+	        <result name="jobs_del_false">/WEB-INF/persons/jobs/jobs_del_false.jsp</result>        
+		</action>
+		</package>
+		
+			
+<package name="persons.Rasmessage" namespace="/persons/Rasmessage"
+       extends="struts-default">
+	    <global-results>
+	  		<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		
+		
+		<action name="rasmessage_*" method="{1}"
+			class="com.persons.action.RasmessageAction">
+			<!-- 收发信息开始 -->
+			<result name="list">/WEB-INF/annoucement/Rasmessage/rasmessage_list.jsp</result>
+			<result name="sList">/WEB-INF/annoucement/Rasmessage/sended_list.jsp</result>
+			<result name="selectInput">/WEB-INF/security/select_user.jsp</result>
+			<result name="addInput">/WEB-INF/annoucement/Rasmessage/rasmessage_add.jsp</result>
+			<result name="show">/WEB-INF/annoucement/Rasmessage/rasmessage_show.jsp</result>
+			<result name="replay">/WEB-INF/annoucement/Rasmessage/rasmessage_replay.jsp</result>
+	        <result name="return_list" type="redirect">rasmessage_list</result>
+	        <!-- 收发信息结束 -->
+	         <result name="check">/WEB-INF/controlcenter/button.jsp</result>
+			
+		</action>
+		</package>
+
+<package name="persons.File" namespace="/persons/File"
+       extends="struts-default">
+	    <global-results>
+	  		<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		
+		
+		<action name="file_*" method="{1}"
+			class="com.persons.action.FileAction">
+			<!-- 收发信息开始 -->
+			<result name="list">/WEB-INF/annoucement/file/file_list.jsp</result>
+			<result name="sList">/WEB-INF/annoucement/Rasmessage/sended_list.jsp</result>
+			<result name="selectInput">/WEB-INF/security/select_user.jsp</result>
+			<result name="addInput">/WEB-INF/annoucement/file/file_add.jsp</result>
+			<result name="editInput">/WEB-INF/annoucement/file/file_edit.jsp</result>
+			<result name="show">/WEB-INF/annoucement/Rasmessage/rasmessage_show.jsp</result>
+			<result name="replay">/WEB-INF/annoucement/Rasmessage/rasmessage_replay.jsp</result>
+	        <result name="return_list" type="redirect">rasmessage_list</result>
+	        <!-- 收发信息结束 -->
+	         <result name="check">/WEB-INF/controlcenter/button.jsp</result>
+			
+		</action>
+		</package>      
+      
+		<package name="persons.approval" namespace="/persons/approval"
+       extends="struts-default">
+	    <global-results>
+	  		<result name="pub_del_success">/common/pub_del_success.jsp</result>
+			<result name="pub_add_success">/common/pub_add_success.jsp</result>
+			<result name="pub_update_success">/common/pub_update_success.jsp</result>
+			<result name="pub_exception">/common/pub_exception.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="pub_exception" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="pub_exception" exception="java.lang.DelException"></exception-mapping>
+		</global-exception-mappings>
+		
+		
+		<action name="approval_*" method="{1}"
+			class="com.persons.action.ApprovalAction">
+			<!-- 收发信息开始 -->
+			<result name="list">/WEB-INF/annoucement/approval/approval_list.jsp</result>
+			<result name="myList">/WEB-INF/annoucement/approval/approval_myList.jsp</result>
+<!-- 			<result name="selectInput">/WEB-INF/security/select_user.jsp</result> -->
+			<result name="addInput">/WEB-INF/annoucement/approval/approval_add.jsp</result>
+			<result name="show">/WEB-INF/annoucement/approval/approval_show.jsp</result>
+			<result name="replay">/WEB-INF/annoucement/Rasmessage/rasmessage_replay.jsp</result>
+	        <result name="return_list" type="redirect">rasmessage_list</result>
+	        <!-- 收发信息结束 -->
+	         <result name="check">/WEB-INF/controlcenter/button.jsp</result>
+			
+		</action>
+		</package>  
+		
+<package name="persons.Rasmessage1" namespace="/persons/Rasmessage1" extends="json-default">
+    	<action name="rasmessage_*" class="com.persons.action.RasmessageAction" method="{1}">
+			<result type="json">
+			
+			</result>
+		</action>
+    </package>
+
+
+</struts>
